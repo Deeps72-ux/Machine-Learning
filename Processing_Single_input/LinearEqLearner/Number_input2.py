@@ -23,8 +23,9 @@ class SimpleLinearRegression:
 
 # Take true slope and intercept as input
 try:
-    true_slope = float(input("Enter the true slope (m): "))
-    true_intercept = float(input("Enter the true intercept (b): "))
+    true_slope = float(input("Enter the slope (m): "))
+    true_intercept = float(input("Enter the y-intercept: "))
+    print(f"Equation entered to train the model:\n y={true_slope}*x+{true_intercept}")
 except ValueError:
     print("Invalid input. Exiting.")
     exit()
@@ -37,6 +38,7 @@ y_data = [true_slope * x + true_intercept for x in x_data]
 # Create and train model
 model = SimpleLinearRegression(learning_rate=0.01)
 y_predicted = []
+print("The learning rate of the model is ",model.learning_rate)
 
 for x, y in zip(x_data, y_data):
     model.update(x, y)
