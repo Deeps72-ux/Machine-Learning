@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 class SimpleLinearRegression:
-    def __init__(self, learning_rate=0.001):
+    def __init__(self, learning_rate=0.01):
         self.slope = 0.0
         self.intercept = 0.0
         self.learning_rate = learning_rate
@@ -21,7 +21,7 @@ class SimpleLinearRegression:
         print(f"Current model: y = {self.slope:.4f} * x + {self.intercept:.4f}")
 
 # Interactive Training Loop
-model = SimpleLinearRegression(learning_rate=0.00001)
+model = SimpleLinearRegression(learning_rate=0.01)
 
 x_data = []
 y_true_data = []
